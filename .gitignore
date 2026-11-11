@@ -1,0 +1,11 @@
+# Backups créés par le lecteur
+*.bak
+# Python
+__pycache__/
+*.pyc
+# OS
+.DS_Store
+Thumbs.db
+# Temporaires
+*.tmp
+.save-*
