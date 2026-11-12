@@ -112,6 +112,25 @@ TLS hybride = X25519 (classique) + Kyber (PQC)
 - **~2030-2035** : ordinateurs quantiques suffisamment puissants pour casser RSA-2048
 - **Deadline NIST** : abandonner RSA/ECC d'ici 2035
 
+### 4.3 Les 4 approches (familles) de la PQC
+
+Les **4 familles** d'algorithmes post-quantiques, telles que retenues par le NIST :
+
+| # | Famille | Principe | Exemples | Statut |
+|---|---------|----------|----------|--------|
+| 1 | **Lattice-based** (réseaux euclidiens) | problèmes sur des réseaux de points (LWE, SVP) | Kyber (ML-KEM), Dilithium (ML-DSA), FALCON | **Standard NIST** (FIPS 203/204) |
+| 2 | **Hash-based** | signatures basées sur des fonctions de hash | SPHINCS+ (SLH-DSA), XMSS | **Standard NIST** (FIPS 205) |
+| 3 | **Code-based** | codes correcteurs d'erreurs | McEliece (très ancien, très sûr) | Pas encore standardisé (en attente) |
+| 4 | **Multivariate** | systèmes d'équations polynomiales | Rainbow (cassé en 2022) | **Éliminé** du processus NIST |
+
+**En résumé :**
+- **Lattice** = la famille dominante (Kyber pour l'échange de clés, Dilithium pour les signatures)
+- **Hash-based** = la plus sûre (SPHINCS+), mais signatures longues
+- **Code-based** = la plus ancienne (McEliece, 1978), clés énormes mais très sûre
+- **Multivariate** = la plus fragile (Rainbow cassé, éliminée)
+
+**Bonus :** il y avait une 5e famille, les **isogeny-based** (SIKE), cassée en 2022 en quelques heures — éliminée du processus.
+
 ## 5. Pièges rookie
 
 | Piège | Réalité |
